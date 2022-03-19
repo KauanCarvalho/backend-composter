@@ -1,5 +1,5 @@
 [![Linkedin Badge](https://img.shields.io/badge/-Kauan%20Carvalho-6633cc?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/kauan-carvalho/)](https://www.linkedin.com/in/kauan-carvalho/)
-[![Linkedin Badge](https://img.shields.io/badge/-Kauan%20Carvalho-6633cc?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/kauan-carvalho/)](https://www.linkedin.com/in/luiz-henrique-speht-reis-de-oliveira-1307141b6/)
+[![Linkedin Badge](https://img.shields.io/badge/-Luiz%20Henrique-6633cc?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/luiz-henrique-speht-reis-de-oliveira-1307141b6//)](https://www.linkedin.com/in/luiz-henrique-speht-reis-de-oliveira-1307141b6/)
 
 # Backend Composter
 
