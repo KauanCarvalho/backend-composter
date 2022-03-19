@@ -1,0 +1,5 @@
+pt-BR:
+  welcome-controller:
+    default-body:
+      app: backend-composter
+      description: APP responsible for persisting data from physical instruments in the field

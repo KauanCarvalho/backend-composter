@@ -35,9 +35,9 @@
 
         $ bundle exec rake db:create db:migrate
 
-6. Rode os testes:
+6. Rode os testes e o rubocop (linter):
 
-        $ RAILS_ENV=test bundle exec rspec
+        $ RAILS_ENV=test bundle exec rspec && bundle exec rubocop
 
 7. Suba o servidor:
 

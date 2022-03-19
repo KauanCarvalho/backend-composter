@@ -30,5 +30,8 @@ end
 group :test do
   gem 'database_cleaner-active_record'
   gem 'factory_bot_rails'
+  gem 'net-imap'
+  gem 'net-pop'
+  gem 'net-smtp'
   gem 'shoulda-matchers'
 end
