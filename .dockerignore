@@ -1,0 +1,34 @@
+# Git related files
+.git
+.github
+.gitignore
+
+# Sample env file
+.env.sample
+
+# local dev configurations
+.tool-versions
+.ruby-version
+
+# just the README file
+README.md
+
+# Ruby
+tmp
+log
+coverage
+
+# Bundle
+.bundle
+vendor/bundle
+
+# Node
+node_modules
+yarn-error.log
+
+# Docker related files
+Dockerfile*
+*Dockerfile
+docker-compose*
+docker-sync*
+.dockerignore

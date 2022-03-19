@@ -1,0 +1,54 @@
+require:
+  - rubocop-performance
+  - rubocop-rails
+
+AllCops:
+  TargetRubyVersion: 3.0.2
+  NewCops: enable
+  SuggestExtensions: false
+  Exclude:
+    - 'bin/*'
+    - 'node_modules/**/*'
+    - 'db/schema.rb'
+    - 'db/migrate/*'
+    - 'tmp/**/*'
+
+Bundler/OrderedGems:
+  Enabled: true
+
+Layout/LineLength:
+  Max: 125
+  Exclude:
+    - 'db/migrate/**/*'
+
+Lint/MissingSuper:
+  Enabled: false
+
+Metrics/AbcSize:
+  Max: 25
+
+Metrics/BlockLength:
+  Max: 30
+  Exclude:
+    - 'spec/**/*'
+    - 'app/admin/*'
+    - 'config/environments/*'
+
+Metrics/ClassLength:
+  Max: 130
+
+Metrics/MethodLength:
+  Max: 30
+
+Rails/SkipsModelValidations:
+  AllowedMethods: update_counters, update_all, update_columns, upsert_all
+  Enabled: true
+
+Style/Documentation:
+  Enabled: false
+
+Style/FormatStringToken:
+  Enabled: false
+
+Style/GlobalStdStream:
+  Enabled: false
