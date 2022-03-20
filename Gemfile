@@ -35,3 +35,7 @@ group :test do
   gem 'net-smtp'
   gem 'shoulda-matchers'
 end
+
+group :production do
+  gem 'mail'
+end
