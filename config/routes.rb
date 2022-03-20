@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     namespace :instrument do
       resource :measurements, only: [] do
         member do
+          get 'list_all_records_with_pagination'
           post 'create_in_batch'
         end
       end

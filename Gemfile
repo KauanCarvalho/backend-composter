@@ -11,6 +11,7 @@ gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
 gem 'rails', '~> 6.0.3'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+gem 'will_paginate', '~> 3.3'
 
 group :development, :test do
   gem 'awesome_print'

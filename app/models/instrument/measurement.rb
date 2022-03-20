@@ -6,5 +6,7 @@ module Instrument
 
     validates :measured_at, :quality, :value, presence: true
     validates :quality, inclusion: { in: POSSIBLE_QUALITIES }
+
+    self.per_page = 10
   end
 end

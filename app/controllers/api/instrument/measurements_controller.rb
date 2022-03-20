@@ -13,6 +13,12 @@ module Api
         end
       end
 
+      def list_all_records_with_pagination
+        measurements_list = ::Instrument::Measurement.paginate(page: page).order('created_at DESC')
+
+        render json: measurements_list, status: :ok
+      end
+
       private
 
       def permitted_params_for_batch
@@ -21,6 +27,10 @@ module Api
           .permit('updateDate', 'sensorReading' => %i[temp humidity pH])
           .to_unsafe_hash.deep_transform_keys(&:underscore)
           .deep_symbolize_keys
+      end
+
+      def page
+        params.permit(:page)[:page] || 1
       end
     end
   end
