@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
-class ApplicationMailer < ActionMailer::Base
-  default from: 'from@example.com'
-  layout 'mailer'
+# rubocop:disable Lint/EmptyClass
+class ApplicationMailer
+  # default from: 'from@example.com'
+  # layout 'mailer'
 end
+# rubocop:enable Lint/EmptyClass
