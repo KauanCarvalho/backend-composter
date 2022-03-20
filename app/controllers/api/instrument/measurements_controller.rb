@@ -4,7 +4,7 @@ module Api
   module Instrument
     class MeasurementsController < ApplicationController
       def create_in_batch
-        response = ::Instrument::Measurements::BatchPersister.new(permitted_params_for_batch.to_unsafe_hash).perform
+        response = ::Instrument::Measurements::BatchPersister.new(permitted_params_for_batch).perform
 
         if response[:success]
           render json: response[:measurements], status: :ok
@@ -16,7 +16,11 @@ module Api
       private
 
       def permitted_params_for_batch
-        params.deep_transform_keys(&:underscore).require(:data).permit(:update_date, sensor_reading: %i[temp humidity p_h])
+        params
+          .require('data')
+          .permit('updateDate', 'sensorReading' => %i[temp humidity pH])
+          .to_unsafe_hash.deep_transform_keys(&:underscore)
+          .deep_symbolize_keys
       end
     end
   end
