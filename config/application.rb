@@ -24,7 +24,7 @@ Bundler.require(*Rails.groups)
 module App
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 6.1
+    config.load_defaults 6.0
 
     extra_paths = [Rails.root.join('lib'), Rails.root.join('app/services')]
     config.autoload_paths.concat(extra_paths)

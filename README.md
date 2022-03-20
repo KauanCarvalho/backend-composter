@@ -7,7 +7,7 @@
 
 | Ruby  | Rails |  PostgreSQL |
 | :---: | :---: | :---------: |
-| 3.1.1 | 6.1.4 |     14.0    |
+| 3.0.0 | 6.0.3 |     14.0    |
 
 #### Clonando o repositório:
 
