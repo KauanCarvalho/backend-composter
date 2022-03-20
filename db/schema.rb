@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2022_03_19_230004) do
 
   create_table "instrument_measurements", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.datetime "measured_at", null: false
-    t.string "type", null: false
+    t.string "quality", null: false
     t.float "value", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

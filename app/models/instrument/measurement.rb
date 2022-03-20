@@ -2,9 +2,9 @@
 
 module Instrument
   class Measurement < ApplicationRecord
-    POSSIBLE_TYPES = %w[temp humidity pH].freeze
+    POSSIBLE_QUALITIES = %w[temp humidity p_h].freeze
 
-    validates :measured_at, :type, :value, presence: true
-    validates :type, inclusion: { in: POSSIBLE_TYPES }
+    validates :measured_at, :quality, :value, presence: true
+    validates :quality, inclusion: { in: POSSIBLE_QUALITIES }
   end
 end
