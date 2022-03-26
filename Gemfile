@@ -5,8 +5,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.0'
 
+gem 'apexcharts'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'dotenv-rails'
+gem 'groupdate'
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
 gem 'rails', '~> 6.0.3'
@@ -31,8 +33,6 @@ end
 group :test do
   gem 'database_cleaner-active_record'
   gem 'factory_bot_rails'
-  gem 'net-imap'
-  gem 'net-pop'
-  gem 'net-smtp'
+  gem 'rails-controller-testing'
   gem 'shoulda-matchers'
 end

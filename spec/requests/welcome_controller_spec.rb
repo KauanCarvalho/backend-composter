@@ -8,7 +8,26 @@ RSpec.describe 'GET /', type: :request do
   let(:expected_body) do
     {
       app: 'backend-composter',
-      description: 'APP responsible for persisting data from physical instruments in the field'
+      description: 'APP responsible for persisting data from physical instruments in the field',
+      interactions: [
+        {
+          description: 'Allows persisting instrument information',
+          type: 'api/JSON',
+          path: '/api/instrument/measurements/create_in_batch',
+          contract: 'https://github.com/KauanCarvalho/backend-composter/issues/1'
+        },
+        {
+          description: 'Allows you to consult instrument information',
+          type: 'api/JSON',
+          path: '/api/instrument/measurements/list_all_records_with_pagination',
+          contract: 'https://github.com/KauanCarvalho/backend-composter/issues/1'
+        },
+        {
+          description: 'Displays the collected data graphically',
+          type: 'web/HTML',
+          path: '/graphics/instrument/measurements'
+        }
+      ]
     }
   end
 

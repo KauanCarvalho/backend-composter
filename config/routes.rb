@@ -3,6 +3,12 @@
 Rails.application.routes.draw do
   root 'welcome#index'
 
+  namespace :graphics do
+    namespace :instrument do
+      resources :measurements, only: :index
+    end
+  end
+
   namespace :api do
     namespace :instrument do
       resource :measurements, only: [] do

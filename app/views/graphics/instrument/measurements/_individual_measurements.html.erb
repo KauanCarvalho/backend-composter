@@ -1,0 +1,108 @@
+<div>
+  <h1> Seção de medição individual </h1>
+
+  <div>
+    <h3> Medições de TEMPERATURA </h3>
+
+    <% temperature_series = [{name: 'Temperatura [°C]', data: @temperature_measurements_grouped_by_hour}] %>
+    <% temperature_options = {
+      title: 'Medidas de temperatura agrupadas por hora',
+      subtitle: 'Média das medidas agrupadas por horas',
+      xtitle: 'Tempo de forma linear',
+      ytitle: 'Valores das medidas em °C',
+      stacked: false
+    } %>
+
+    <%= line_chart(temperature_series, {**temperature_options, theme: 'palette5', curve: 'stepline'}) %>
+
+    <% if @temperature_measurements.present? %>
+      <h3> Últimas medidas de temperatura </h3>
+      <table style='text-align: center;margin: auto;'>
+        <tr>
+          <th>Valor</th>
+          <th>Unidade</th>
+          <th>Data de medição</th>
+        </tr>
+
+        <% @temperature_measurements.last(5).each do |temperature_measurement| %>
+          <tr>
+            <td><%= temperature_measurement.value %></td>
+            <td> °C </td>
+            <td><%= temperature_measurement.measured_at.strftime('%d/%m/%y %H:%M:%S') %></td>
+          </tr>
+        <% end %>
+      </table>
+      <br>
+    <% end %>
+  </div>
+
+  <div>
+    <h3> Medições de HUMIDADE </h3>
+
+    <% humidity_series = [{name: 'Humidade [°%]', data: @humidity_measurements_grouped_by_hour}] %>
+    <% humidity_options = {
+      title: 'Medidas de humidade agrupadas por hora',
+      subtitle: 'Média das medidas agrupadas por horas',
+      xtitle: 'Tempo de forma linear',
+      ytitle: 'Valores das medidas em %',
+      stacked: false
+    } %>
+
+    <%= line_chart(humidity_series, {**humidity_options, theme: 'palette6', curve: 'stepline'}) %>
+
+    <% if @humidity_measurements.present? %>
+      <h3> Últimas medidas de umidade </h3>
+      <table style='text-align: center;margin: auto;'>
+        <tr>
+          <th>Valor</th>
+          <th>Unidade</th>
+          <th>Data de medição</th>
+        </tr>
+
+        <% @humidity_measurements.last(5).each do |humidity_measurement| %>
+          <tr>
+            <td><%= humidity_measurement.value %></td>
+            <td> % </td>
+            <td><%= humidity_measurement.measured_at.strftime('%d/%m/%y %H:%M:%S') %></td>
+          </tr>
+        <% end %>
+      </table>
+      <br>
+    <% end %>
+  </div>
+
+  <div>
+    <h3> Medições de PH </h3>
+
+    <% ph_series = [{name: 'pH [adimensional]', data: @ph_measurements_grouped_by_hour}] %>
+    <% ph_options = {
+      title: 'Medidas de pH agrupadas por hora',
+      subtitle: 'Média das medidas agrupadas por horas',
+      xtitle: 'Tempo de forma linear',
+      ytitle: 'Valores das medidas em [adimensional]',
+      stacked: false
+    } %>
+
+    <%= line_chart(ph_series, {**ph_options, theme: 'palette7', curve: 'stepline'}) %>
+
+    <% if @ph_measurements.present? %>
+      <h3> Últimas medidas de pH </h3>
+      <table style='text-align: center;margin: auto;'>
+        <tr>
+          <th>Valor</th>
+          <th>Unidade</th>
+          <th>Data de medição</th>
+        </tr>
+
+        <% @ph_measurements.last(5).each do |ph_measurement| %>
+          <tr>
+            <td><%= ph_measurement.value %></td>
+            <td> ad </td>
+            <td><%= ph_measurement.measured_at.strftime('%d/%m/%y %H:%M:%S') %></td>
+          </tr>
+        <% end %>
+      </table>
+      <br>
+    <% end %>
+  </div>
+</div>
