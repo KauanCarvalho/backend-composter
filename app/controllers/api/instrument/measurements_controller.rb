@@ -7,7 +7,10 @@ module Api
         response = ::Instrument::Measurements::BatchPersister.new(permitted_params_for_batch).perform
 
         if response[:success]
-          render json: response[:measurements], status: :ok
+          render json: response[:measurements],
+                 root: false,
+                 each_serializer: ::Instrument::MeasurementSerializer,
+                 status: :ok
         else
           render json: response, status: :unprocessable_entity
         end

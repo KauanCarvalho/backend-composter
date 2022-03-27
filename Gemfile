@@ -5,6 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.0'
 
+gem 'active_model_serializers', '~> 0.10.0'
 gem 'apexcharts'
 gem 'aws-sdk-s3', require: false
 gem 'bootsnap', '>= 1.4.4', require: false
@@ -34,6 +35,7 @@ end
 group :test do
   gem 'database_cleaner-active_record'
   gem 'factory_bot_rails'
+  gem 'json_matchers'
   gem 'rails-controller-testing'
   gem 'shoulda-matchers'
 end
