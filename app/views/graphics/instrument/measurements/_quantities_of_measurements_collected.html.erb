@@ -17,7 +17,8 @@
       subtitle: 'Comparação entre a quantidade de medidas coletadas por grandeza física por dia',
       xtitle: 'Quantidades de medidas acumuladas',
       ytitle: 'Data das medidas',
-      stacked: true
+      stacked: true,
+      fill: 'gradient'
     } %>
 
     <%= bar_chart(series_by_day, {**options_by_day, theme: 'palette6'}) %>
@@ -30,6 +31,6 @@
 
     <% legend = { temp: 'Temperatura', p_h: 'pH', humidity: 'Umidade' } %>
     <% pie_series = @quantities_of_measurements_collected.map { |key, value| { name: legend[key.to_s.to_sym], data: value } }%>
-    <%= pie_chart(pie_series, legend: 'right', theme: 'palette6') %>
+    <%= pie_chart(pie_series, legend: 'right', theme: 'palette6', fill: 'gradient') %>
   </div>
 </div>
