@@ -1,19 +1,21 @@
 <div>
-  <h1> Seção de medição individual </h1>
+  <h1 style='color: #111; font-family: Helvetica Neue, sans-serif; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; margin: 30px;'>Seção de medições individuais</h1>
 
   <div>
-    <h3> Medições de TEMPERATURA </h3>
+    <hr>
+    <h3 style='color: #111; font-family: Helvetica Neue, sans-serif; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; margin: 30px;'>Medições de <b>T E M P E R A T U R A</b></h3>
+    <hr>
 
     <% temperature_series = [{name: 'Temperatura [°C]', data: @temperature_measurements_grouped_by_hour}] %>
     <% temperature_options = {
       title: 'Medidas de temperatura agrupadas por hora',
-      subtitle: 'Média das medidas agrupadas por horas',
+      subtitle: 'Todos os pontossão referentes a média em das medidas coletadas no intervalo de uma hora',
       xtitle: 'Tempo de forma linear',
       ytitle: 'Valores das medidas em °C',
       stacked: false
     } %>
 
-    <%= line_chart(temperature_series, {**temperature_options, theme: 'palette5', curve: 'stepline'}) %>
+    <%= line_chart(temperature_series, {**temperature_options, theme: 'palette10', curve: 'stepline'}) %>
 
     <% range_temperature_min = @temperature_measurements.group_by_day(:measured_at).minimum(:value) %>
     <% range_temperature_max = @temperature_measurements.group_by_day(:measured_at).maximum(:value) %>
@@ -25,11 +27,11 @@
       }
     ] %>
 
-    <%= range_bar_chart(range_temperature_series, title: 'Barra de variação diária da temperatura', subtitle: 'Noção da variação da temperatura ao longo do dia', xtitle: 'Variação da temperatura em [°C]',  ytitle: 'Data da variação', theme: 'palette5') %>
+    <%= range_bar_chart(range_temperature_series, title: 'Variação diária da temperatura', subtitle: 'Delta de variação da temperatura ao longo do dia', xtitle: 'Variação da temperatura em [°C]',  ytitle: 'Data da variação', theme: 'palette10') %>
 
     <% if @temperature_measurements.present? %>
-      <h3> Últimas medidas de temperatura </h3>
-      <table style='text-align: center;margin: auto;'>
+      <h3 style='color: #111; font-family: Helvetica Neue, sans-serif; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; margin: 30px;'> Últimas medidas de <b>T E M P E R A T U R A</b> enviadas pelos instrumentos</h3>
+      <table style='text-align: center; margin: auto; border-collapse: collapse; font-size: 0.9em; font-family: sans-serif; min-width: 400px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);'>
         <tr>
           <th>Valor</th>
           <th>Unidade</th>
@@ -49,18 +51,20 @@
   </div>
 
   <div>
-    <h3> Medições de HUMIDADE </h3>
+    <hr>
+    <h3 style='color: #111; font-family: Helvetica Neue, sans-serif; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; margin: 30px;'>Medições de <b>U M I D A D E</b></h3>
+    <hr>
 
     <% humidity_series = [{name: 'Humidade [°%]', data: @humidity_measurements_grouped_by_hour}] %>
     <% humidity_options = {
       title: 'Medidas de humidade agrupadas por hora',
-      subtitle: 'Média das medidas agrupadas por horas',
+      subtitle: 'Todos os pontossão referentes a média em das medidas coletadas no intervalo de uma hora',
       xtitle: 'Tempo de forma linear',
       ytitle: 'Valores das medidas em %',
       stacked: false
     } %>
 
-    <%= line_chart(humidity_series, {**humidity_options, theme: 'palette6', curve: 'stepline'}) %>
+    <%= line_chart(humidity_series, {**humidity_options, theme: 'palette5', curve: 'stepline'}) %>
 
     <% range_humidity_min = @humidity_measurements.group_by_day(:measured_at).minimum(:value) %>
     <% range_humidity_max = @humidity_measurements.group_by_day(:measured_at).maximum(:value) %>
@@ -72,11 +76,11 @@
       }
     ] %>
 
-    <%= range_bar_chart(range_humidity_series, title: 'Barra de variação diária da umidade', subtitle: 'Noção da variação daumidade ao longo do dia', xtitle: 'Variação da umidade em [%]',  ytitle: 'Data da variação', theme: 'palette6') %>
+    <%= range_bar_chart(range_humidity_series, title: 'Variação diária da umidade', subtitle: 'Delta de variação da umidade ao longo do dia', xtitle: 'Variação da umidade em [%]',  ytitle: 'Data da variação', theme: 'palette5') %>
 
     <% if @humidity_measurements.present? %>
-      <h3> Últimas medidas de umidade </h3>
-      <table style='text-align: center;margin: auto;'>
+      <h3 style='color: #111; font-family: Helvetica Neue, sans-serif; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; margin: 30px;'> Últimas medidas de <b>U M I D A D E</b> enviadas pelos instrumentos</h3>
+      <table style='text-align: center; margin: auto; border-collapse: collapse; font-size: 0.9em; font-family: sans-serif; min-width: 400px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);'>
         <tr>
           <th>Valor</th>
           <th>Unidade</th>
@@ -96,12 +100,14 @@
   </div>
 
   <div>
-    <h3> Medições de PH </h3>
+    <hr>
+    <h3 style='color: #111; font-family: Helvetica Neue, sans-serif; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; margin: 30px;'>Medições de <b>P H</b></h3>
+    <hr>
 
     <% ph_series = [{name: 'pH [adimensional]', data: @ph_measurements_grouped_by_hour}] %>
     <% ph_options = {
       title: 'Medidas de pH agrupadas por hora',
-      subtitle: 'Média das medidas agrupadas por horas',
+      subtitle: 'Todos os pontossão referentes a média em das medidas coletadas no intervalo de uma hora',
       xtitle: 'Tempo de forma linear',
       ytitle: 'Valores das medidas em [adimensional]',
       stacked: false
@@ -122,8 +128,8 @@
     <%= range_bar_chart(range_ph_series, title: 'Barra de variação diária do PH', subtitle: 'Noção da variação do PH ao longo do dia', xtitle: 'Variação do pH em [ad]',  ytitle: 'Data da variação', theme: 'palette7') %>
 
     <% if @ph_measurements.present? %>
-      <h3> Últimas medidas de pH </h3>
-      <table style='text-align: center;margin: auto;'>
+      <h3 style='color: #111; font-family: Helvetica Neue, sans-serif; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; margin: 30px;'> Últimas medidas de <b>P H</b> enviadas pelos instrumentos</h3>
+      <table style='text-align: center; margin: auto; border-collapse: collapse; font-size: 0.9em; font-family: sans-serif; min-width: 400px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);'>
         <tr>
           <th>Valor</th>
           <th>Unidade</th>

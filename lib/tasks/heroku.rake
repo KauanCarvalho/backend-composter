@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 namespace :heroku do
   desc 'basically export the measurement table to a csv in S3 for the frontend team'
 

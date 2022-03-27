@@ -1,30 +1,35 @@
 <div>
-  <h1> Seção referente a quantidade de dados coletados </h1>
+  <h1 style='color: #111; font-family: Helvetica Neue, sans-serif; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center;'>Seção referente a quantidade de dados coletados</h1>
 
   <div>
-    <h3> Quantidade de medidas coletadas por gradeza por dia </h3>
+    <hr>
+    <h3 style='color: #111; font-family: Helvetica Neue, sans-serif; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; margin: 30px;'> Quantidade de medidas coletadas por gradeza por dia</h3>
+    <hr>
 
     <% series_by_day = [
-      {name: 'quantidade de medidas de temperatura', data: @temperature_measurements_grouped_by_day},
-      {name: 'quantidade de medidas de umidade', data: @humidity_measurements_grouped_by_day},
-      {name: 'quantidade de medidas de pH', data: @ph_measurements_grouped_by_day}
+      {name: 'Quantidade de medidas de temperatura', data: @temperature_measurements_grouped_by_day},
+      {name: 'Quantidade de medidas de umidade', data: @humidity_measurements_grouped_by_day},
+      {name: 'Quantidade de medidas de pH', data: @ph_measurements_grouped_by_day}
     ] %>
 
     <% options_by_day = {
       title: 'Quantidade de medidas coletadas por grandeza',
-      subtitle: 'Melhor visualização de como estão os equipamentos',
-      xtitle: 'Week',
-      ytitle: 'Properties',
+      subtitle: 'Comparação entre a quantidade de medidas coletadas por grandeza física por dia',
+      xtitle: 'Quantidades de medidas acumuladas',
+      ytitle: 'Data das medidas',
       stacked: true
     } %>
 
-    <%= bar_chart(series_by_day, {**options_by_day, theme: 'palette7'}) %>
+    <%= bar_chart(series_by_day, {**options_by_day, theme: 'palette6'}) %>
   </div>
 
   <div>
-    <h3> Quantidade de medidas coletadas nos últimos 2 meses por grandeza </h3>
+    <hr>
+    <h3 style='color: #111; font-family: Helvetica Neue, sans-serif; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; margin: 30px;'>Quantidade de medidas coletadas nos últimos 2 meses por grandeza</h3>
+    <hr>
 
-    <% pie_series = @quantities_of_measurements_collected.map { |key, value| { name: key, data: value } }%>
-    <%= pie_chart(pie_series, legend: 'right') %>
+    <% legend = { temp: 'Temperatura', p_h: 'pH', humidity: 'Umidade' } %>
+    <% pie_series = @quantities_of_measurements_collected.map { |key, value| { name: legend[key.to_s.to_sym], data: value } }%>
+    <%= pie_chart(pie_series, legend: 'right', theme: 'palette6') %>
   </div>
 </div>
