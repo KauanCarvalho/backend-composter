@@ -1,2 +1,9 @@
 pt-BR:
   hello: Olá
+  activerecord:
+    errors:
+      models:
+        instrument/measurement:
+          attributes:
+            value:
+              blank: "can't be blank"
