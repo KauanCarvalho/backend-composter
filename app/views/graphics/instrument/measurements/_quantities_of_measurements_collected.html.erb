@@ -5,32 +5,38 @@
     <hr>
     <h3 style='color: #111; font-family: Helvetica Neue, sans-serif; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; margin: 30px;'> Quantidade de medidas coletadas por gradeza por dia</h3>
     <hr>
-
-    <% series_by_day = [
-      {name: 'Quantidade de medidas de temperatura', data: @temperature_measurements_grouped_by_day},
-      {name: 'Quantidade de medidas de umidade', data: @humidity_measurements_grouped_by_day},
-      {name: 'Quantidade de medidas de pH', data: @ph_measurements_grouped_by_day}
-    ] %>
-
-    <% options_by_day = {
-      title: 'Quantidade de medidas coletadas por grandeza',
-      subtitle: 'Comparação entre a quantidade de medidas coletadas por grandeza física por dia',
-      xtitle: 'Quantidades de medidas acumuladas',
-      ytitle: 'Data das medidas',
-      stacked: true,
-      fill: 'gradient'
-    } %>
-
-    <%= bar_chart(series_by_day, {**options_by_day, theme: 'palette6'}) %>
   </div>
 
-  <div>
-    <hr>
-    <h3 style='color: #111; font-family: Helvetica Neue, sans-serif; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; margin: 30px;'>Quantidade de medidas coletadas nos últimos 2 meses por grandeza</h3>
-    <hr>
+  <% if @temperature_measurements_grouped_by_day.blank? && @humidity_measurements_grouped_by_day.blank? &&  @ph_measurements_grouped_by_day.blank? %>
+    <h4 style='color: red; font-family: Helvetica Neue, sans-serif; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; margin: 30px;'>Sem medições recentes para serem exibidas</h3>
+  <% else %>
+    <div>
+      <% series_by_day = [
+        {name: 'Quantidade de medidas de temperatura', data: @temperature_measurements_grouped_by_day},
+        {name: 'Quantidade de medidas de umidade', data: @humidity_measurements_grouped_by_day},
+        {name: 'Quantidade de medidas de pH', data: @ph_measurements_grouped_by_day}
+      ] %>
 
-    <% legend = { temp: 'Temperatura', p_h: 'pH', humidity: 'Umidade' } %>
-    <% pie_series = @quantities_of_measurements_collected.map { |key, value| { name: legend[key.to_s.to_sym], data: value } }%>
-    <%= pie_chart(pie_series, legend: 'right', theme: 'palette6', fill: 'gradient') %>
-  </div>
+      <% options_by_day = {
+        title: 'Quantidade de medidas coletadas por grandeza',
+        subtitle: 'Comparação entre a quantidade de medidas coletadas por grandeza física por dia',
+        xtitle: 'Quantidades de medidas acumuladas',
+        ytitle: 'Data das medidas',
+        stacked: true,
+        fill: 'gradient'
+      } %>
+
+      <%= bar_chart(series_by_day, {**options_by_day, theme: 'palette6'}) %>
+    </div>
+
+    <div>
+      <hr>
+      <h3 style='color: #111; font-family: Helvetica Neue, sans-serif; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; margin: 30px;'>Quantidade de medidas coletadas nos últimos 2 meses por grandeza</h3>
+      <hr>
+
+      <% legend = { temp: 'Temperatura', p_h: 'pH', humidity: 'Umidade' } %>
+      <% pie_series = @quantities_of_measurements_collected.map { |key, value| { name: legend[key.to_s.to_sym], data: value } }%>
+      <%= pie_chart(pie_series, legend: 'right', theme: 'palette6', fill: 'gradient') %>
+    </div>
+  <% end %>
 </div>

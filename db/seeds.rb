@@ -123,7 +123,13 @@ Instrument::Measurement.create!(
     { quality: 'temp', value: 60.01, measured_at: '26/03/2022 08:00:00' },
     { quality: 'temp', value: 60.03, measured_at: '26/03/2022 12:00:00' },
     { quality: 'temp', value: 60.02, measured_at: '26/03/2022 16:00:00' },
-    { quality: 'temp', value: 60.01, measured_at: '26/03/2022 21:00:00' }
+    { quality: 'temp', value: 60.01, measured_at: '26/03/2022 21:00:00' },
+    # March 27.
+    { quality: 'temp', value: 60.02, measured_at: '27/03/2022 04:00:00' },
+    { quality: 'temp', value: 60.03, measured_at: '27/03/2022 08:00:00' },
+    { quality: 'temp', value: 60.04, measured_at: '27/03/2022 12:00:00' },
+    { quality: 'temp', value: 60.05, measured_at: '27/03/2022 16:00:00' },
+    { quality: 'temp', value: 60.08, measured_at: '27/03/2022 21:00:00' }
   ]
 )
 
@@ -250,7 +256,13 @@ Instrument::Measurement.create!(
     { quality: 'humidity', value: 55.00, measured_at: '26/03/2022 08:00:00' },
     { quality: 'humidity', value: 55.00, measured_at: '26/03/2022 12:00:00' },
     { quality: 'humidity', value: 55.00, measured_at: '26/03/2022 16:00:00' },
-    { quality: 'humidity', value: 55.00, measured_at: '26/03/2022 21:00:00' }
+    { quality: 'humidity', value: 55.00, measured_at: '26/03/2022 21:00:00' },
+    # March 27.
+    { quality: 'humidity', value: 54.95, measured_at: '27/03/2022 04:00:00' },
+    { quality: 'humidity', value: 55.93, measured_at: '27/03/2022 08:00:00' },
+    { quality: 'humidity', value: 55.91, measured_at: '27/03/2022 12:00:00' },
+    { quality: 'humidity', value: 55.87, measured_at: '27/03/2022 16:00:00' },
+    { quality: 'humidity', value: 55.82, measured_at: '27/03/2022 21:00:00' }
   ]
 )
 
@@ -377,6 +389,12 @@ Instrument::Measurement.create!(
     { quality: 'p_h', value: 9.07, measured_at: '26/03/2022 08:00:00' },
     { quality: 'p_h', value: 9.06, measured_at: '26/03/2022 12:00:00' },
     { quality: 'p_h', value: 9.05, measured_at: '26/03/2022 16:00:00' },
-    { quality: 'p_h', value: 9.04, measured_at: '26/03/2022 21:00:00' }
+    { quality: 'p_h', value: 9.04, measured_at: '26/03/2022 21:00:00' },
+    # March 27.
+    { quality: 'p_h', value: 9.03, measured_at: '27/03/2022 04:00:00' },
+    { quality: 'p_h', value: 9.02, measured_at: '27/03/2022 08:00:00' },
+    { quality: 'p_h', value: 9.02, measured_at: '27/03/2022 12:00:00' },
+    { quality: 'p_h', value: 9.01, measured_at: '27/03/2022 16:00:00' },
+    { quality: 'p_h', value: 9.01, measured_at: '27/03/2022 21:00:00' }
   ]
 )

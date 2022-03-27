@@ -3,7 +3,7 @@
 module Instrument
   class Measurement < ApplicationRecord
     POSSIBLE_QUALITIES = %w[temp humidity p_h].freeze
-    LIMIT_DATE_FOR_CHART = 2.months.freeze
+    LIMIT_DATE_FOR_CHART = 45.days.freeze
 
     validates :measured_at, :quality, :value, presence: true
     validates :quality, inclusion: { in: POSSIBLE_QUALITIES }
