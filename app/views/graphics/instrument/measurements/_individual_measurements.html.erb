@@ -44,7 +44,7 @@
 
           <% @temperature_measurements.last(5).each do |temperature_measurement| %>
             <tr>
-              <td><%= temperature_measurement.value %></td>
+              <td style='color: purple;'><%= temperature_measurement.value %></td>
               <td> °C </td>
               <td><%= temperature_measurement.measured_at.strftime('%d/%m/%y %H:%M:%S') %></td>
             </tr>
@@ -100,7 +100,7 @@
 
           <% @humidity_measurements.last(5).each do |humidity_measurement| %>
             <tr>
-              <td><%= humidity_measurement.value %></td>
+              <td style='color:#20B2AA;'><%= humidity_measurement.value %></td>
               <td> % </td>
               <td><%= humidity_measurement.measured_at.strftime('%d/%m/%y %H:%M:%S') %></td>
             </tr>
@@ -156,7 +156,7 @@
 
           <% @ph_measurements.last(5).each do |ph_measurement| %>
             <tr>
-              <td><%= ph_measurement.value %></td>
+              <td style='color:#800000;'><%= ph_measurement.value %></td>
               <td> ad </td>
               <td><%= ph_measurement.measured_at.strftime('%d/%m/%y %H:%M:%S') %></td>
             </tr>
