@@ -33,6 +33,10 @@ group :development do
   gem 'spring'
 end
 
+group :production do
+  gem 'lograge'
+end
+
 group :test do
   gem 'database_cleaner-active_record'
   gem 'factory_bot_rails'
