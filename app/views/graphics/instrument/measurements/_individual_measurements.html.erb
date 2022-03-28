@@ -3,7 +3,7 @@
 
   <div>
     <hr>
-    <h3 style='color: #111; font-family: Helvetica Neue, sans-serif; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; margin: 30px;'>Medições de <b style="color: purple;">T E M P E R A T U R A</b></h3>
+    <h3 style='color: #111; font-family: Helvetica Neue, sans-serif; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; margin: 30px;'>Medições de <b style='color: purple;'>T E M P E R A T U R A</b></h3>
     <hr>
   </div>
 
@@ -34,7 +34,7 @@
       <%= range_bar_chart(range_temperature_series, title: 'Variação diária da temperatura', subtitle: 'Delta de variação da temperatura ao longo do dia', xtitle: 'Variação da temperatura em [°C]',  ytitle: 'Data da variação', theme: 'palette10', fill: 'gradient') %>
 
       <% if @temperature_measurements.present? %>
-        <h3 style='color: #111; font-family: Helvetica Neue, sans-serif; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; margin: 30px;'> Últimas medidas de <b style="color: purple;">T E M P E R A T U R A</b> enviadas pelos instrumentos</h3>
+        <h3 style='color: #111; font-family: Helvetica Neue, sans-serif; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; margin: 30px;'> Últimas medidas de <b style='color: purple;'>T E M P E R A T U R A</b> enviadas pelos instrumentos</h3>
         <table style='text-align: center; margin: auto; border-collapse: collapse; font-size: 0.9em; font-family: sans-serif; min-width: 400px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);'>
           <tr>
             <th>Valor</th>
@@ -54,12 +54,12 @@
       <% end %>
     </div>
   <% else %>
-    <h4 style='color: red; font-family: Helvetica Neue, sans-serif; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; margin: 30px;'>Sem medições recentes para serem exibidas</h3>
+    <h4 style='color: red; font-family: Helvetica Neue, sans-serif; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; margin: 30px;'>Sem medições recentes para serem exibidas</h4>
   <% end %>
 
   <div>
     <hr>
-    <h3 style='color: #111; font-family: Helvetica Neue, sans-serif; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; margin: 30px;'>Medições de <b style="color:#20B2AA;">U M I D A D E</b></h3>
+    <h3 style='color: #111; font-family: Helvetica Neue, sans-serif; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; margin: 30px;'>Medições de <b style='color:#20B2AA;'>U M I D A D E</b></h3>
     <hr>
   </div>
 
@@ -90,7 +90,7 @@
       <%= range_bar_chart(range_humidity_series, title: 'Variação diária da umidade', subtitle: 'Delta de variação da umidade ao longo do dia', xtitle: 'Variação da umidade em [%]',  ytitle: 'Data da variação', theme: 'palette5', fill: 'gradient') %>
 
       <% if @humidity_measurements.present? %>
-        <h3 style='color: #111; font-family: Helvetica Neue, sans-serif; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; margin: 30px;'> Últimas medidas de <b style="color:#20B2AA;">U M I D A D E</b> enviadas pelos instrumentos</h3>
+        <h3 style='color: #111; font-family: Helvetica Neue, sans-serif; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; margin: 30px;'> Últimas medidas de <b style='color:#20B2AA;'>U M I D A D E</b> enviadas pelos instrumentos</h3>
         <table style='text-align: center; margin: auto; border-collapse: collapse; font-size: 0.9em; font-family: sans-serif; min-width: 400px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);'>
           <tr>
             <th>Valor</th>
@@ -110,12 +110,12 @@
       <% end %>
     </div>
   <% else %>
-    <h4 style='color: red; font-family: Helvetica Neue, sans-serif; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; margin: 30px;'>Sem medições recentes para serem exibidas</h3>
+    <h4 style='color: red; font-family: Helvetica Neue, sans-serif; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; margin: 30px;'>Sem medições recentes para serem exibidas</h4>
   <% end %>
 
   <div>
     <hr>
-    <h3 style='color: #111; font-family: Helvetica Neue, sans-serif; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; margin: 30px;'>Medições de <b style="color:#800000;">P H</b></h3>
+    <h3 style='color: #111; font-family: Helvetica Neue, sans-serif; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; margin: 30px;'>Medições de <b style='color:#800000;'>P H</b></h3>
     <hr>
   </div>
 
@@ -146,7 +146,7 @@
       <%= range_bar_chart(range_ph_series, title: 'Barra de variação diária do PH', subtitle: 'Noção da variação do PH ao longo do dia', xtitle: 'Variação do pH em [ad]',  ytitle: 'Data da variação', theme: 'palette7', fill: 'gradient') %>
 
       <% if @ph_measurements.present? %>
-        <h3 style='color: #111; font-family: Helvetica Neue, sans-serif; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; margin: 30px;'> Últimas medidas de <b style="color:#800000;">P H</b> enviadas pelos instrumentos</h3>
+        <h3 style='color: #111; font-family: Helvetica Neue, sans-serif; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; margin: 30px;'> Últimas medidas de <b style='color:#800000;'>P H</b> enviadas pelos instrumentos</h3>
         <table style='text-align: center; margin: auto; border-collapse: collapse; font-size: 0.9em; font-family: sans-serif; min-width: 400px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);'>
           <tr>
             <th>Valor</th>
@@ -166,6 +166,6 @@
       <% end %>
     </div>
   <% else %>
-    <h4 style='color: red; font-family: Helvetica Neue, sans-serif; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; margin: 30px;'>Sem medições recentes para serem exibidas</h3>
+    <h4 style='color: red; font-family: Helvetica Neue, sans-serif; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; margin: 30px;'>Sem medições recentes para serem exibidas</h4>
   <% end %>
 </div>
