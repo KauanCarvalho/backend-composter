@@ -19,6 +19,7 @@ gem 'will_paginate', '~> 3.3'
 
 group :development, :test do
   gem 'awesome_print'
+  gem 'bullet', '~> 6.1.0'
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'rspec-rails'
