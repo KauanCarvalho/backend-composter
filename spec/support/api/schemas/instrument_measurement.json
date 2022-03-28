@@ -10,6 +10,9 @@
     "measured_at": {
       "type": ["string"]
     },
+    "quality": {
+      "type": ["string"]
+    },
     "created_at": {
       "type": ["string"]
     },

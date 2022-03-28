@@ -10,6 +10,7 @@ describe Instrument::MeasurementSerializer do
   it_behaves_like 'a serializable object', %i[
     id
     measured_at
+    quality
     value
     created_at
     updated_at
@@ -20,6 +21,7 @@ describe Instrument::MeasurementSerializer do
 
     it { expect(subject[:id]).to eq(instrument_measurement.id) }
     it { expect(subject[:measured_at]).to eq(instrument_measurement.measured_at) }
+    it { expect(subject[:quality]).to eq(instrument_measurement.quality) }
     it { expect(subject[:value]).to eq(instrument_measurement.value) }
     it { expect(subject[:created_at]).to eq(instrument_measurement.created_at) }
     it { expect(subject[:updated_at]).to eq(instrument_measurement.updated_at) }

@@ -19,7 +19,10 @@ module Api
       def list_all_records_with_pagination
         measurements_list = ::Instrument::Measurement.paginate(page: page).order('created_at DESC')
 
-        render json: measurements_list, status: :ok
+        render json: measurements_list,
+               root: false,
+               each_serializer: ::Instrument::MeasurementSerializer,
+               status: :ok
       end
 
       private

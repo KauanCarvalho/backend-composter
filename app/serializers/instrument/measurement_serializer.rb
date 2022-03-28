@@ -2,6 +2,6 @@
 
 module Instrument
   class MeasurementSerializer < ApplicationSerializer
-    attributes :id, :measured_at, :value, :created_at, :updated_at
+    attributes :id, :measured_at, :quality, :value, :created_at, :updated_at
   end
 end
