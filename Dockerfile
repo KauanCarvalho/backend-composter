@@ -17,4 +17,10 @@ ENV LANG=en_US.UTF-8 \
     TERM=xterm \
     BUNDLE_APP_CONFIG=/app/.bundle
 
+COPY Gemfile.lock ./
+
+RUN gem update --system && \
+    gem install bundler -v $(tail -1 /app/Gemfile.lock | xargs) --conservative --default && \
+    bundle config specific_platform x86_64-linux
+
 CMD tail -f /dev/null

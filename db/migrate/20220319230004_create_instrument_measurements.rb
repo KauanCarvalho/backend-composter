@@ -1,4 +1,4 @@
-class CreateInstrumentMeasurements < ActiveRecord::Migration[6.1]
+class CreateInstrumentMeasurements < ActiveRecord::Migration[6.0]
   def change
     create_table :instrument_measurements, id: :uuid do |t|
       t.datetime :measured_at, null: false
